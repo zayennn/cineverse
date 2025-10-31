@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiStar, FiClock, FiEye } from 'react-icons/fi';
-import { Movie } from '../../data/movies';
+import type { Movie } from '../../data/movies';
 import styles from './FilmCard.module.css';
 
 interface FilmCardProps {
