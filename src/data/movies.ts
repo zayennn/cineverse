@@ -1,5 +1,13 @@
 import Zootopia from '../assets/images/films/zootopia.jpeg'
 import Deadpool2 from '../assets/images/films/deadpool2.jpg'
+import FastX from '../assets/images/films/fastx.webp'
+import Jumanji from '../assets/images/films/jumanji.jpg'
+import Frozen3 from '../assets/images/films/Frozen3.jpg'
+import Insidious from '../assets/images/films/insidious.jpg'
+import Endgame from '../assets/images/films/endgame.jpg'
+import NinjaAssassin from '../assets/images/films/ninjaAssassin.jpg'
+import MidnightSun from '../assets/images/films/midnightSun.jpg'
+import TheGreatestShowman from '../assets/images/films/theGreatestShowMan.png'
 
 export interface Movie {
   id: number;
