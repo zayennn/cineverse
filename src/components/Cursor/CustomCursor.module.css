@@ -1,0 +1,57 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.cursor.pointer {
+  background: var(--accent-secondary);
+  opacity: 1;
+}
+
+.cursor.dark {
+  background: #8b5cf6;
+}
+
+.cursor.light {
+  background: #6a0dad;
+}
+
+.cursorFollower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+.cursorFollower.pointer {
+  background: rgba(192, 132, 252, 0.5);
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 768px) {
+  .cursor,
+  .cursorFollower {
+    display: none;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+}
