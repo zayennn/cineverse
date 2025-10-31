@@ -34,6 +34,7 @@ const Landing: React.FC = () => {
     <div className={styles.landing}>
       {showCursor && <CustomCursor />}
       
+      {/* Navbar tidak memerlukan props - PERBAIKAN DI SINI */}
       <Navbar />
       <HeroSlider />
       
@@ -75,7 +76,7 @@ const Landing: React.FC = () => {
               <FilmCard 
                 key={movie.id} 
                 movie={movie} 
-                index={index} // Perbaiki di sini - hapus modulus
+                index={index}
               />
             ))}
           </motion.div>
