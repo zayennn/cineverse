@@ -75,7 +75,7 @@ const Landing: React.FC = () => {
               <FilmCard 
                 key={movie.id} 
                 movie={movie} 
-                index={index % 8} // Limit animation delay repetition
+                index={index} // Perbaiki di sini - hapus modulus
               />
             ))}
           </motion.div>
