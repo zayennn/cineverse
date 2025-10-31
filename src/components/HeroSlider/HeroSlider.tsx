@@ -4,7 +4,6 @@ import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { FiPlay, FiInfo } from 'react-icons/fi';
 
-// Import Swiper styles - PERBAIKAN DI SINI
 import 'swiper/swiper-bundle.css';
 import { movies } from '../../data/movies';
 import styles from './HeroSlider.module.css';
@@ -19,7 +18,7 @@ const HeroSlider: React.FC = () => {
         effect="fade"
         speed={1000}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        pagination={{ 
+        pagination={{
           clickable: true,
           bulletClass: styles.bullet,
           bulletActiveClass: styles.bulletActive
@@ -28,22 +27,20 @@ const HeroSlider: React.FC = () => {
       >
         {featuredMovies.map((movie) => (
           <SwiperSlide key={movie.id} className={styles.slide}>
-            <div className={styles.slideBackground}>
-              {/* Ganti dengan placeholder image yang lebih realistis */}
-              <div className={styles.placeholderImage} style={{ 
-                background: `linear-gradient(135deg, #2a0a4a 0%, #6a0dad 100%)`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: '2rem',
-                fontWeight: 'bold'
-              }}>
-                {movie.title}
-              </div>
-              <div className={styles.gradientOverlay} />
+            {/* Background Image */}
+            <div
+              className={styles.slideBackground}
+              style={{
+                backgroundImage: `url(${movie.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className={styles.gradientOverlay}></div>
             </div>
-            
+
+            {/* Slide Content */}
             <div className={styles.slideContent}>
               <motion.div
                 className={styles.content}
@@ -53,22 +50,24 @@ const HeroSlider: React.FC = () => {
               >
                 <h1 className={styles.title}>{movie.title}</h1>
                 <p className={styles.description}>{movie.description}</p>
-                
+
                 <div className={styles.metaInfo}>
                   <span className={styles.rating}>⭐ {movie.rating}</span>
                   <span className={styles.age}>{movie.age}</span>
                   <span className={styles.duration}>{movie.duration}</span>
                   <span className={styles.year}>{movie.year}</span>
                 </div>
-                
+
                 <div className={styles.genres}>
                   {movie.genre.map((genre) => (
-                    <span key={genre} className={styles.genreTag}>{genre}</span>
+                    <span key={genre} className={styles.genreTag}>
+                      {genre}
+                    </span>
                   ))}
                 </div>
-                
+
                 <div className={styles.buttons}>
-                  <motion.button 
+                  <motion.button
                     className={styles.playButton}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -76,7 +75,7 @@ const HeroSlider: React.FC = () => {
                     <FiPlay size={20} />
                     Watch Now
                   </motion.button>
-                  <motion.button 
+                  <motion.button
                     className={styles.infoButton}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

@@ -17,7 +17,7 @@ export interface Movie {
   rating: number;
   age: string;
   duration: string;
-  image: string;
+  image: any;
   year: number;
   featured?: boolean;
 }
