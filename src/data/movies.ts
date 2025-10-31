@@ -9,6 +9,13 @@ import NinjaAssassin from '../assets/images/films/ninjaAssassin.jpg'
 import MidnightSun from '../assets/images/films/midnightSun.jpg'
 import TheGreatestShowman from '../assets/images/films/theGreatestShowMan.png'
 
+// slider image
+import ZootopiaSlider from '../assets/images/sliderHero/Zootopia.jpg'
+import Deadpool2Slider from '../assets/images/sliderHero/deadpool2.jpg'
+import EndgameSlider from '../assets/images/sliderHero/endgame.jpg'
+import TheGreatestShowmanSlider from '../assets/images/sliderHero/the-greatest-showman.jpeg'
+
+
 export interface Movie {
   id: number;
   title: string;
@@ -18,6 +25,7 @@ export interface Movie {
   age: string;
   duration: string;
   image: any;
+  imgSlider?: any;
   year: number;
   featured?: boolean;
 }
@@ -52,6 +60,7 @@ export const movies: Movie[] = [
     age: "7+",
     duration: "1h 48m",
     image: Zootopia,
+    imgSlider: ZootopiaSlider,
     year: 2016,
     featured: true,
   },
@@ -65,6 +74,7 @@ export const movies: Movie[] = [
     age: "17+",
     duration: "1h 59m",
     image: Deadpool2,
+    imgSlider: Deadpool2Slider,
     year: 2018,
     featured: true,
   },
@@ -126,6 +136,7 @@ export const movies: Movie[] = [
     age: "13+",
     duration: "3h 1m",
     image: Endgame,
+    imgSlider: EndgameSlider,
     year: 2019,
     featured: true,
   },
@@ -163,6 +174,7 @@ export const movies: Movie[] = [
     age: "10+",
     duration: "1h 45m",
     image: TheGreatestShowman,
+    imgSlider: TheGreatestShowmanSlider,
     year: 2017,
     featured: true,
   },

@@ -27,7 +27,6 @@ const HeroSlider: React.FC = () => {
       >
         {featuredMovies.map((movie) => (
           <SwiperSlide key={movie.id} className={styles.slide}>
-            {/* Background Image */}
             <div
               className={styles.slideBackground}
               style={{
