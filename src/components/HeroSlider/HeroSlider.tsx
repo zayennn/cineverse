@@ -30,7 +30,7 @@ const HeroSlider: React.FC = () => {
             <div
               className={styles.slideBackground}
               style={{
-                backgroundImage: `url(${movie.image})`,
+                backgroundImage: `url(${movie.imgSlider})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
