@@ -1,4 +1,5 @@
-
+import Zootopia from '../assets/images/films/zootopia.jpeg'
+import Deadpool2 from '../assets/images/films/deadpool2.jpg'
 
 export interface Movie {
   id: number;
@@ -42,7 +43,7 @@ export const movies: Movie[] = [
     rating: 8.0,
     age: "7+",
     duration: "1h 48m",
-    image: "https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg",
+    image: Zootopia,
     year: 2016,
     featured: true,
   },
@@ -55,7 +56,7 @@ export const movies: Movie[] = [
     rating: 8.1,
     age: "17+",
     duration: "1h 59m",
-    image: "https://image.tmdb.org/t/p/w500/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg",
+    image: Deadpool2,
     year: 2018,
     featured: true,
   },
@@ -68,7 +69,7 @@ export const movies: Movie[] = [
     rating: 7.1,
     age: "13+",
     duration: "2h 21m",
-    image: "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+    image: FastX,
     year: 2023,
   },
   {
@@ -80,7 +81,7 @@ export const movies: Movie[] = [
     rating: 7.3,
     age: "13+",
     duration: "1h 59m",
-    image: "https://image.tmdb.org/t/p/w500/pSgXKPU5h6U89ipF7HBYajvYt7j.jpg",
+    image: Jumanji,
     year: 2017,
   },
   {
@@ -92,7 +93,7 @@ export const movies: Movie[] = [
     rating: 8.0,
     age: "7+",
     duration: "1h 55m",
-    image: "https://image.tmdb.org/t/p/w500/mINJaa34MtknCYl5AjtNJzWj8cD.jpg",
+    image: Frozen3,
     year: 2025,
   },
   {
@@ -104,7 +105,7 @@ export const movies: Movie[] = [
     rating: 6.7,
     age: "18+",
     duration: "1h 47m",
-    image: "https://image.tmdb.org/t/p/w500/d07xtqwq1uriQ1hda6qeu8Skt5m.jpg",
+    image: Insidious,
     year: 2023,
   },
   {
@@ -116,7 +117,7 @@ export const movies: Movie[] = [
     rating: 8.4,
     age: "13+",
     duration: "3h 1m",
-    image: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+    image: Endgame,
     year: 2019,
     featured: true,
   },
@@ -129,7 +130,7 @@ export const movies: Movie[] = [
     rating: 6.3,
     age: "18+",
     duration: "1h 39m",
-    image: "https://image.tmdb.org/t/p/w500/hv4XjKhD2ueSMLc9eMjsGNo4M1D.jpg",
+    image: NinjaAssassin,
     year: 2009,
   },
   {
@@ -141,7 +142,7 @@ export const movies: Movie[] = [
     rating: 7.2,
     age: "10+",
     duration: "1h 31m",
-    image: "https://image.tmdb.org/t/p/w500/veFZHnZcM99GZ0xC0Hk5xA9Tkz8.jpg",
+    image: MidnightSun,
     year: 2018,
   },
   {
@@ -153,7 +154,7 @@ export const movies: Movie[] = [
     rating: 8.0,
     age: "10+",
     duration: "1h 45m",
-    image: "https://image.tmdb.org/t/p/w500/b9CeobiihCx1uG1tpw8hXmpi7nm.jpg",
+    image: TheGreatestShowman,
     year: 2017,
     featured: true,
   },
