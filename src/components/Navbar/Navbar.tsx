@@ -1,90 +1,218 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiStar, FiClock, FiEye } from 'react-icons/fi';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  FiSearch, 
+  FiSun, 
+  FiMoon, 
+  FiMonitor,
+  FiChevronDown,
+  FiMenu,
+  FiX
+} from 'react-icons/fi';
+import { useTheme } from '../../contexts/ThemeContext';
+import { movies, genres } from '../../data/movies';
 import type { Movie } from '../../data/movies';
-import styles from './FilmCard.module.css';
+import styles from './Navbar.module.css';
 
-interface FilmCardProps {
-  movie: Movie;
-  index: number;
-}
+// Definisikan type untuk theme
+type Theme = 'dark' | 'light' | 'system';
 
-const FilmCard: React.FC<FilmCardProps> = ({ movie, index }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const Navbar: React.FC = () => { // Tidak ada props yang diperlukan
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isGenreOpen, setIsGenreOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const genreRef = useRef<HTMLDivElement>(null);
+
+  const filteredMovies = movies.filter(movie =>
+    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+  ).slice(0, 5);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchOpen(false);
+      }
+      if (genreRef.current && !genreRef.current.contains(event.target as Node)) {
+        setIsGenreOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const themeIcons = {
+    dark: <FiMoon size={18} />,
+    light: <FiSun size={18} />,
+    system: <FiMonitor size={18} />
+  };
 
   return (
-    <motion.div
-      className={styles.card}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ scale: 1.05, rotateY: 5 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+    <motion.nav 
+      className={styles.navbar}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      <div className={styles.cardInner}>
-        {/* Card Image */}
-        <div className={styles.imageContainer}>
-          <img src={movie.image} alt={movie.title} className={styles.image} />
-          
-          {/* Hover Overlay */}
-          <motion.div 
-            className={styles.overlay}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
+      <div className={styles.container}>
+        {/* Logo */}
+        <motion.div 
+          className={styles.logo}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span className={styles.logoText}>CineVerse</span>
+        </motion.div>
+
+        {/* Desktop Menu */}
+        <div className={styles.desktopMenu}>
+          {/* Genre Dropdown */}
+          <div className={styles.genreDropdown} ref={genreRef}>
+            <button 
+              className={styles.genreButton}
+              onClick={() => setIsGenreOpen(!isGenreOpen)}
+            >
+              <span>Browse Genres</span>
+              <FiChevronDown className={`${styles.chevron} ${isGenreOpen ? styles.rotated : ''}`} />
+            </button>
+            
+            <AnimatePresence>
+              {isGenreOpen && (
+                <motion.div
+                  className={styles.genreMenu}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {genres.map((genre) => (
+                    <button key={genre} className={styles.genreItem}>
+                      {genre}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Search Bar */}
+          <div className={styles.searchContainer} ref={searchRef}>
+            <div className={styles.searchInputWrapper}>
+              <FiSearch className={styles.searchIcon} />
+              <input
+                type="text"
+                placeholder="Search movies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setIsSearchOpen(true)}
+                className={styles.searchInput}
+              />
+            </div>
+
+            <AnimatePresence>
+              {isSearchOpen && searchQuery && (
+                <motion.div
+                  className={styles.searchResults}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                >
+                  {filteredMovies.map((movie) => (
+                    <div key={movie.id} className={styles.searchResultItem}>
+                      <div className={styles.searchResultImage}>
+                        {/* Ganti dengan placeholder */}
+                        <div style={{ 
+                          width: '100%', 
+                          height: '100%', 
+                          background: 'linear-gradient(135deg, #2a0a4a 0%, #6a0dad 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white',
+                          fontSize: '0.7rem'
+                        }}>
+                          {movie.title.substring(0, 2)}
+                        </div>
+                      </div>
+                      <div className={styles.searchResultInfo}>
+                        <div className={styles.searchResultTitle}>{movie.title}</div>
+                        <div className={styles.searchResultMeta}>
+                          <span>⭐ {movie.rating}</span>
+                          <span>{movie.age}</span>
+                          <span>{movie.duration}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {filteredMovies.length === 0 && (
+                    <div className={styles.noResults}>No movies found</div>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Theme Toggle */}
+          <div className={styles.themeToggle}>
+            <select
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as Theme)}
+              className={styles.themeSelect}
+            >
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+              <option value="system">System</option>
+            </select>
+            <div className={styles.themeIcon}>
+              {themeIcons[theme]}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className={styles.mobileMenuButton}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className={styles.mobileMenu}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
           >
-            <div className={styles.overlayContent}>
-              <motion.button
-                className={styles.watchButton}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <FiEye size={20} />
-                Watch Now
-              </motion.button>
+            <div className={styles.mobileSearch}>
+              <input
+                type="text"
+                placeholder="Search movies..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={styles.mobileSearchInput}
+              />
+              <FiSearch className={styles.mobileSearchIcon} />
+            </div>
+            
+            <div className={styles.mobileGenres}>
+              {genres.map((genre) => (
+                <button key={genre} className={styles.mobileGenreItem}>
+                  {genre}
+                </button>
+              ))}
             </div>
           </motion.div>
-
-          {/* Age Badge */}
-          <div className={styles.ageBadge}>{movie.age}</div>
-        </div>
-
-        {/* Card Content */}
-        <div className={styles.content}>
-          <h3 className={styles.title}>{movie.title}</h3>
-          <p className={styles.description}>{movie.description}</p>
-          
-          <div className={styles.genres}>
-            {movie.genre.map((genre, idx) => (
-              <span key={idx} className={styles.genre}>{genre}</span>
-            ))}
-          </div>
-          
-          <div className={styles.meta}>
-            <div className={styles.rating}>
-              <FiStar className={styles.starIcon} />
-              <span>{movie.rating}</span>
-            </div>
-            <div className={styles.duration}>
-              <FiClock className={styles.clockIcon} />
-              <span>{movie.duration}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Glow Effect */}
-        <motion.div 
-          className={styles.glow}
-          animate={{ 
-            opacity: isHovered ? 0.6 : 0,
-            scale: isHovered ? 1.1 : 1
-          }}
-          transition={{ duration: 0.3 }}
-        />
-      </div>
-    </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
-export default FilmCard;
+export default Navbar;

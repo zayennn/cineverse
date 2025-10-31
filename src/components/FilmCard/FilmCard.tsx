@@ -25,7 +25,24 @@ const FilmCard: React.FC<FilmCardProps> = ({ movie, index }) => {
       <div className={styles.cardInner}>
         {/* Card Image */}
         <div className={styles.imageContainer}>
-          <img src={movie.image} alt={movie.title} className={styles.image} />
+          {/* Ganti dengan placeholder */}
+          <div 
+            className={styles.placeholderImage}
+            style={{ 
+              background: `linear-gradient(135deg, #2a0a4a 0%, #6a0dad 100%)`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              width: '100%',
+              height: '100%',
+              position: 'absolute'
+            }}
+          >
+            {movie.title.split(' ').map(word => word[0]).join('')}
+          </div>
           
           {/* Hover Overlay */}
           <motion.div 
