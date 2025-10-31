@@ -12,6 +12,26 @@ export interface Movie {
   featured?: boolean;
 }
 
+export const genres = [
+  "All",
+  "Action",
+  "Adventure",
+  "Romance",
+  "Sci-Fi",
+  "Fantasy",
+  "Drama",
+  "Thriller",
+  "Mystery",
+  "Horror",
+  "Musical",
+  "Family",
+  "Superhero",
+  "Animation",
+  "Crime",
+  "Spy",
+];
+
+
 export const movies: Movie[] = [
   {
     id: 1,
