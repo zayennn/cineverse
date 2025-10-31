@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { FiPlay, FiInfo } from 'react-icons/fi';
+
+// Import Swiper styles - PERBAIKAN DI SINI
+import 'swiper/swiper-bundle.css';
 import { movies } from '../../data/movies';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
 import styles from './HeroSlider.module.css';
 
 const HeroSlider: React.FC = () => {
@@ -29,7 +29,18 @@ const HeroSlider: React.FC = () => {
         {featuredMovies.map((movie) => (
           <SwiperSlide key={movie.id} className={styles.slide}>
             <div className={styles.slideBackground}>
-              <img src={movie.image} alt={movie.title} />
+              {/* Ganti dengan placeholder image yang lebih realistis */}
+              <div className={styles.placeholderImage} style={{ 
+                background: `linear-gradient(135deg, #2a0a4a 0%, #6a0dad 100%)`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '2rem',
+                fontWeight: 'bold'
+              }}>
+                {movie.title}
+              </div>
               <div className={styles.gradientOverlay} />
             </div>
             
