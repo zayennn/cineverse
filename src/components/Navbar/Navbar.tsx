@@ -14,10 +14,9 @@ import { movies, genres } from '../../data/movies';
 import type { Movie } from '../../data/movies';
 import styles from './Navbar.module.css';
 
-// Definisikan type untuk theme
 type Theme = 'dark' | 'light' | 'system';
 
-const Navbar: React.FC = () => { // Tidak ada props yang diperlukan
+const Navbar: React.FC = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
