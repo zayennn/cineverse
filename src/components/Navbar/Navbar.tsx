@@ -122,18 +122,20 @@ const Navbar: React.FC = () => {
                   {filteredMovies.map((movie) => (
                     <div key={movie.id} className={styles.searchResultItem}>
                       <div className={styles.searchResultImage}>
-                        {/* Ganti dengan placeholder */}
                         <div style={{ 
                           width: '100%', 
                           height: '100%', 
                           background: 'linear-gradient(135deg, #2a0a4a 0%, #6a0dad 100%)',
+                          backgroundImage: `url(${movie.image})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           color: 'white',
                           fontSize: '0.7rem'
                         }}>
-                          {movie.title.substring(0, 2)}
+                          {/* {movie.title.substring(0, 2)} */}
                         </div>
                       </div>
                       <div className={styles.searchResultInfo}>
