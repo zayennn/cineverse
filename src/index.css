@@ -67,3 +67,9 @@ body.cursor-visible {
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
+.jumbotron {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
