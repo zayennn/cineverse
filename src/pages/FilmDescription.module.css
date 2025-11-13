@@ -1,425 +1,423 @@
 .container {
-  min-height: 100vh;
-  background: var(--bg-primary);
+    min-height: 100vh;
+    background: var(--bg-primary);
 }
 
 /* Jumbotron with Paroller Effect */
 .jumbotron {
-  position: relative;
-  height: 80vh;
-  min-height: 600px;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  overflow: hidden;
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 
 .jumbotronOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(10, 4, 24, 0.8) 50%,
-    var(--bg-primary) 100%
-  );
-  display: flex;
-  align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(10, 4, 24, 0.8) 50%,
+            var(--bg-primary) 100%);
+    display: flex;
+    align-items: flex-end;
 }
 
 .jumbotronContent {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
 }
 
 .backButton {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .backButton:hover {
-  background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .movieHeader {
-  color: white;
-  max-width: 600px;
+    color: white;
+    max-width: 600px;
 }
 
 .movieTitle {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.1;
-  background: linear-gradient(135deg, #ffffff 0%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .movieDescription {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  opacity: 0.9;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 .movieMeta {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .metaItem {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .metaIcon {
-  color: var(--accent-secondary);
+    color: var(--accent-secondary);
 }
 
 .ageRating {
-  padding: 0.25rem 0.75rem;
-  background: rgba(239, 68, 68, 0.8);
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(239, 68, 68, 0.8);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .genres {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
 }
 
 .genreTag {
-  padding: 0.5rem 1rem;
-  background: rgba(139, 92, 246, 0.3);
-  border: 1px solid rgba(139, 92, 246, 0.5);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    background: rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
 }
 
 .actionButtons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .playButton {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: var(--accent-primary);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .playButton:hover {
-  background: var(--accent-secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
 }
 
 .favoriteButton {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .favoriteButton:hover {
-  background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .favoriteButton.favorited {
-  background: rgba(239, 68, 68, 0.2);
-  border-color: rgba(239, 68, 68, 0.5);
-  color: #f87171;
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+    color: #f87171;
 }
 
 /* Content Sections */
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
 .sectionTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  background: var(--bg-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: var(--bg-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Synopsis Section */
 .synopsisSection {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 .synopsisContent {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  backdrop-filter: blur(10px);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .synopsisContent p {
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
 }
 
 .synopsisContent p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Rating Section */
 .ratingSection {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 .ratingInput {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  backdrop-filter: blur(10px);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .starRating {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .star {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0.5rem;
 }
 
 .star:hover,
 .star.active {
-  color: #fbbf24;
-  transform: scale(1.2);
+    color: #fbbf24;
+    transform: scale(1.2);
 }
 
 .ratingValue {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 /* Comments Section */
 .addComment {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
 }
 
 .commentInput {
-  width: 100%;
-  background: rgba(139, 92, 246, 0.05);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: 12px;
-  padding: 1rem;
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 1rem;
-  resize: vertical;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
+    width: 100%;
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
 
 .commentInput:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  background: rgba(139, 92, 246, 0.1);
+    outline: none;
+    border-color: var(--accent-primary);
+    background: rgba(139, 92, 246, 0.1);
 }
 
 .commentInput::placeholder {
-  color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
 .submitComment {
-  background: var(--accent-primary);
-  color: white;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .submitComment:hover:not(:disabled) {
-  background: var(--accent-secondary);
-  transform: translateY(-2px);
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
 }
 
 .submitComment:disabled {
-  background: var(--text-secondary);
-  cursor: not-allowed;
-  transform: none;
+    background: var(--text-secondary);
+    cursor: not-allowed;
+    transform: none;
 }
 
 .commentsList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .commentItem {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  backdrop-filter: blur(10px);
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .commentHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .commentRating {
-  display: flex;
-  gap: 0.25rem;
+    display: flex;
+    gap: 0.25rem;
 }
 
 .commentRating .filled {
-  color: #fbbf24;
+    color: #fbbf24;
 }
 
 .commentRating .empty {
-  color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
 .commentDate {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .commentText {
-  line-height: 1.6;
-  color: var(--text-primary);
+    line-height: 1.6;
+    color: var(--text-primary);
 }
 
 .noComments {
-  text-align: center;
-  padding: 3rem;
-  color: var(--text-secondary);
-  font-style: italic;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
 .notFound {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    gap: 2rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .jumbotron {
-    height: 60vh;
-    min-height: 400px;
-    background-attachment: scroll;
-  }
-  
-  .jumbotronContent {
-    padding: 1rem;
-  }
-  
-  .movieTitle {
-    font-size: 2.5rem;
-  }
-  
-  .movieDescription {
-    font-size: 1.1rem;
-  }
-  
-  .movieMeta {
-    gap: 1rem;
-  }
-  
-  .actionButtons {
-    flex-direction: column;
-  }
-  
-  .playButton,
-  .favoriteButton {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
-    justify-content: center;
-  }
-  
-  .content {
-    padding: 2rem 1rem;
-  }
-  
-  .sectionTitle {
-    font-size: 1.5rem;
-  }
-  
-  .synopsisContent,
-  .ratingInput,
-  .addComment {
-    padding: 1.5rem;
-  }
+    .jumbotron {
+        height: 60vh;
+        min-height: 400px;
+        background-attachment: scroll;
+    }
+
+    .jumbotronContent {
+        padding: 1rem;
+    }
+
+    .movieTitle {
+        font-size: 2.5rem;
+    }
+
+    .movieDescription {
+        font-size: 1.1rem;
+    }
+
+    .movieMeta {
+        gap: 1rem;
+    }
+
+    .actionButtons {
+        flex-direction: column;
+    }
+
+    .playButton,
+    .favoriteButton {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    .content {
+        padding: 2rem 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .synopsisContent,
+    .ratingInput,
+    .addComment {
+        padding: 1.5rem;
+    }
 }
