@@ -68,35 +68,6 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
-          {/* Genre Dropdown */}
-          <div className={styles.genreDropdown} ref={genreRef}>
-            <button 
-              className={styles.genreButton}
-              onClick={() => setIsGenreOpen(!isGenreOpen)}
-            >
-              <span>Browse Genres</span>
-              <FiChevronDown className={`${styles.chevron} ${isGenreOpen ? styles.rotated : ''}`} />
-            </button>
-            
-            <AnimatePresence>
-              {isGenreOpen && (
-                <motion.div
-                  className={styles.genreMenu}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {genres.map((genre) => (
-                    <button key={genre} className={styles.genreItem}>
-                      {genre}
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           {/* Search Bar */}
           <div className={styles.searchContainer} ref={searchRef}>
             <div className={styles.searchInputWrapper}>
