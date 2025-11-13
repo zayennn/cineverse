@@ -1,7 +1,7 @@
 .card {
   position: relative;
   perspective: 1000px;
-  cursor: none;
+  cursor: pointer;
 }
 
 .cardInner {
@@ -51,11 +51,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(10, 4, 24, 0.8) 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(10, 4, 24, 0.8) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -150,7 +148,8 @@
   align-items: center;
 }
 
-.rating, .duration {
+.rating,
+.duration {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -166,7 +165,8 @@
   color: var(--text-secondary);
 }
 
-.starIcon, .clockIcon {
+.starIcon,
+.clockIcon {
   color: var(--text-secondary);
 }
 
@@ -188,15 +188,15 @@
   .card {
     cursor: pointer;
   }
-  
+
   .content {
     padding: 1rem;
   }
-  
+
   .title {
     font-size: 1rem;
   }
-  
+
   .description {
     font-size: 0.85rem;
   }
