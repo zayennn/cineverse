@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiStar, FiClock, FiEye } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import type { Movie } from '../../data/movies';
 import styles from './FilmCard.module.css';
 
@@ -11,6 +12,16 @@ interface FilmCardProps {
 
 const FilmCard: React.FC<FilmCardProps> = ({ movie, index }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  const handleWatchNow = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card click
+    navigate(`/movie/${movie.id}`);
+  };
+
+  const handleCardClick = () => {
+    navigate(`/movie/${movie.id}`);
+  };
 
   return (
     <motion.div
@@ -21,11 +32,28 @@ const FilmCard: React.FC<FilmCardProps> = ({ movie, index }) => {
       whileHover={{ scale: 1.05, rotateY: 5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      onClick={handleCardClick}
     >
       <div className={styles.cardInner}>
         {/* Card Image */}
         <div className={styles.imageContainer}>
-          <img src={movie.image} alt={movie.title} className={styles.image} />
+          <div 
+            className={styles.placeholderImage}
+            style={{ 
+              background: `linear-gradient(135deg, #2a0a4a 0%, #6a0dad 100%)`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              width: '100%',
+              height: '100%',
+              position: 'absolute'
+            }}
+          >
+            {movie.title.split(' ').map(word => word[0]).join('')}
+          </div>
           
           {/* Hover Overlay */}
           <motion.div 
@@ -39,6 +67,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ movie, index }) => {
                 className={styles.watchButton}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                onClick={handleWatchNow}
               >
                 <FiEye size={20} />
                 Watch Now
